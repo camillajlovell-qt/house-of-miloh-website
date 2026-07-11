@@ -1,0 +1,35 @@
+/* House of Miloh — typography tokens
+   Sizes/leading/tracking are verbatim from the Figma JSX (no 4/8px snapping). */
+:root {
+  --font-serif: "EB Garamond", ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* eyebrow / small-caps label role — see fonts.css note on Liberation Serif substitution */
+  --font-eyebrow: "EB Garamond", ui-serif, Georgia, "Times New Roman", serif;
+
+  /* display serif scale (EB Garamond, regular unless noted) */
+  --text-display-xl: italic 400 72px/80px var(--font-serif);   /* hero H1 */
+  --text-display-l: 400 72px/1 var(--font-serif);              /* page title, tight leading */
+  --text-display-m: 400 64px/72px var(--font-serif);            /* section H1, -1.5px tracking */
+  --text-display-s: 400 48px/56px var(--font-serif);             /* section H2 */
+  --text-headline: 400 32px/40px var(--font-serif);              /* logo / wordmark size, -1.6px tracking */
+  --text-subhead: italic 400 24px/32px var(--font-serif);
+
+  /* eyebrow labels — bold italic small caps, wide tracking */
+  --text-eyebrow: italic 600 12px/16px var(--font-eyebrow);      /* letter-spacing: 1.2px */
+  --text-caption-italic: italic 400 18px/28px var(--font-serif); /* photo captions */
+
+  /* sans (Hanken Grotesk) — UI, nav, body copy */
+  --text-nav: 400 14px/20px var(--font-sans);                    /* letter-spacing: 1.4px, uppercase */
+  --text-body-l: 400 18px/28px var(--font-sans);
+  --text-body: 400 16px/24px var(--font-sans);
+  --text-body-s: 400 14px/20px var(--font-sans);
+  --text-label: 500 12px/16px var(--font-sans);                  /* form field labels, letter-spacing 0.6px */
+  --text-caption-upper: 400 14px/20px var(--font-serif);          /* hotel/project name caps, tracking .7px */
+
+  --tracking-tightest: -1.6px;
+  --tracking-tight: -1.44px;
+  --tracking-normal: 0;
+  --tracking-wide: 0.7px;
+  --tracking-wider: 1.2px;
+  --tracking-widest: 1.4px;
+}

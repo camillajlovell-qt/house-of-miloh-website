@@ -1,0 +1,21 @@
+/* House of Miloh — global base (kept minimal; components carry their own rules) */
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5, p { margin: 0; }
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+img { display: block; max-width: 100%; }
+
+.eyebrow {
+  font: var(--text-eyebrow);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--text-heading-alt);
+}
+.eyebrow-brown { color: var(--text-body); font-weight: 400; font-style: normal; letter-spacing: var(--tracking-wide); }

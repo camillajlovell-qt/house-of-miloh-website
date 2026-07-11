@@ -1,0 +1,267 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/core/**",
+              "components/forms/**",
+              "components/media/**",
+              "components/navigation/**",
+              "ui_kits/website/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:EB Garamond|Hanken Grotesk))/i]",
+        "message": "Font not provided by the design system. Available: EB Garamond, Hanken Grotesk."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|size|as|href|children|style|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, size, as, href, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:solid|outline)$/]",
+        "message": "<Button> variant must be one of 'solid' | 'outline'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:default|large)$/]",
+        "message": "<Button> size must be one of 'default' | 'large'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='as'] > Literal[value!=/^(?:button|a)$/]",
+        "message": "<Button> as must be one of 'button' | 'a'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|color|style|key|ref|className|style|children)$/]",
+        "message": "<Eyebrow> doesn't accept that prop. Declared props: children, color, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Input'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|multiline|rows|style|key|ref|className|style|children)$/]",
+        "message": "<Input> doesn't accept that prop. Declared props: label, multiline, rows, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='NavLink'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|active|href|style|key|ref|className|style|children)$/]",
+        "message": "<NavLink> doesn't accept that prop. Declared props: children, active, href, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PortfolioCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:image|title|tagline|aspect|style|key|ref|className|style|children)$/]",
+        "message": "<PortfolioCard> doesn't accept that prop. Declared props: image, title, tagline, aspect, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ServiceTile'] > JSXAttribute > JSXIdentifier[name!=/^(?:image|label|style|key|ref|className|style|children)$/]",
+        "message": "<ServiceTile> doesn't accept that prop. Declared props: image, label, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FooterLink'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|href|key|ref|className|style|children)$/]",
+        "message": "<FooterLink> doesn't accept that prop. Declared props: label, href."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='NavItem'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|href|key|ref|className|style|children)$/]",
+        "message": "<NavItem> doesn't accept that prop. Declared props: label, href."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SocialIconButton'] > JSXAttribute > JSXIdentifier[name!=/^(?:icon|href|size|style|key|ref|className|style|children)$/]",
+        "message": "<SocialIconButton> doesn't accept that prop. Declared props: icon, href, size, style."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Button": {
+        "replaces": []
+      },
+      "Eyebrow": {
+        "replaces": []
+      },
+      "Input": {
+        "replaces": []
+      },
+      "NavLink": {
+        "replaces": []
+      },
+      "PortfolioCard": {
+        "replaces": []
+      },
+      "ServiceTile": {
+        "replaces": []
+      },
+      "FooterLink": {
+        "replaces": []
+      },
+      "NavItem": {
+        "replaces": []
+      },
+      "SocialIconButton": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--border-hairline",
+      "--border-ink",
+      "--content-max",
+      "--focus-ring",
+      "--font-eyebrow",
+      "--font-sans",
+      "--font-serif",
+      "--gutter",
+      "--miloh-black",
+      "--miloh-brown",
+      "--miloh-cream",
+      "--miloh-ivory",
+      "--miloh-linen",
+      "--miloh-maroon",
+      "--miloh-near-black",
+      "--miloh-rose",
+      "--miloh-sand",
+      "--miloh-white",
+      "--nav-height",
+      "--page-width",
+      "--radius",
+      "--radius-pill",
+      "--space-1",
+      "--space-10",
+      "--space-11",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--space-9",
+      "--surface-footer",
+      "--surface-inverse",
+      "--surface-media-placeholder",
+      "--surface-page",
+      "--surface-section-alt",
+      "--text-body",
+      "--text-body-l",
+      "--text-body-s",
+      "--text-caption-italic",
+      "--text-caption-upper",
+      "--text-display-l",
+      "--text-display-m",
+      "--text-display-s",
+      "--text-display-xl",
+      "--text-eyebrow",
+      "--text-heading",
+      "--text-heading-alt",
+      "--text-headline",
+      "--text-label",
+      "--text-link",
+      "--text-nav",
+      "--text-on-inverse",
+      "--text-subhead",
+      "--tracking-normal",
+      "--tracking-tight",
+      "--tracking-tightest",
+      "--tracking-wide",
+      "--tracking-wider",
+      "--tracking-widest"
+    ],
+    "tokenKinds": {
+      "--miloh-cream": "color",
+      "--miloh-ivory": "color",
+      "--miloh-sand": "color",
+      "--miloh-linen": "color",
+      "--miloh-white": "color",
+      "--miloh-maroon": "color",
+      "--miloh-near-black": "color",
+      "--miloh-brown": "color",
+      "--miloh-black": "color",
+      "--miloh-rose": "color",
+      "--surface-page": "color",
+      "--surface-section-alt": "color",
+      "--surface-media-placeholder": "color",
+      "--surface-footer": "color",
+      "--surface-inverse": "color",
+      "--text-heading": "font",
+      "--text-heading-alt": "font",
+      "--text-body": "font",
+      "--text-on-inverse": "font",
+      "--text-link": "font",
+      "--border-hairline": "color",
+      "--border-ink": "color",
+      "--focus-ring": "color",
+      "--font-serif": "font",
+      "--font-sans": "font",
+      "--font-eyebrow": "font",
+      "--text-display-xl": "font",
+      "--text-display-l": "font",
+      "--text-display-m": "font",
+      "--text-display-s": "font",
+      "--text-headline": "font",
+      "--text-subhead": "font",
+      "--text-eyebrow": "font",
+      "--text-caption-italic": "font",
+      "--text-nav": "font",
+      "--text-body-l": "font",
+      "--text-body-s": "font",
+      "--text-label": "font",
+      "--text-caption-upper": "font",
+      "--tracking-tightest": "font",
+      "--tracking-tight": "font",
+      "--tracking-normal": "font",
+      "--tracking-wide": "font",
+      "--tracking-wider": "font",
+      "--tracking-widest": "font",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--space-9": "spacing",
+      "--space-10": "spacing",
+      "--space-11": "spacing",
+      "--content-max": "spacing",
+      "--page-width": "spacing",
+      "--gutter": "spacing",
+      "--nav-height": "spacing",
+      "--radius": "radius",
+      "--radius-pill": "radius"
+    },
+    "fontFamilies": [
+      "EB Garamond",
+      "Hanken Grotesk"
+    ]
+  }
+}

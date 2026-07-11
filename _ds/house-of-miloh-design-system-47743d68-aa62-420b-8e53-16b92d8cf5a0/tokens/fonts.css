@@ -1,0 +1,12 @@
+/* House of Miloh — webfonts
+   EB Garamond (serif display/body) + Hanken Grotesk (sans UI/body) are both
+   available on Google Fonts and match the source file's fonts exactly — no
+   substitution needed for either.
+
+   The source file also uses "Liberation Serif" (bold / bold-italic, small-caps
+   eyebrow labels at 12px). Liberation Serif is a metrics-compatible stand-in
+   for Times New Roman that Figma/LibreOffice substitutes when the real font
+   isn't installed — it is not an intentional brand typeface. We substitute
+   EB Garamond Medium Italic for that role (see typography.css --font-eyebrow),
+   flagged in readme.md. */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700&display=swap');
