@@ -97,7 +97,7 @@ Object.assign(__ds_scope, { Eyebrow });
 // components/core/NavLink.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/** Uppercase, wide-tracked nav link. Brown by default, maroon/black on hover, optional active underline box. */
+/** Uppercase, wide-tracked nav link. Brown by default, maroon/black on hover, optional active underline. */
 function NavLink({
   children,
   active = false,
@@ -114,8 +114,8 @@ function NavLink({
       letterSpacing: "var(--tracking-widest)",
       textTransform: "uppercase",
       color: active ? "var(--text-heading)" : "var(--text-body)",
-      border: active ? "1px solid var(--border-ink)" : "1px solid transparent",
-      padding: active ? "0 0 4px" : "0",
+      borderBottom: active ? "1px solid var(--border-ink)" : "1px solid transparent",
+      paddingBottom: 4,
       transition: "color 0.2s ease",
       ...style
     },
@@ -506,8 +506,8 @@ function SiteHeader({
       letterSpacing: "var(--tracking-widest)",
       textTransform: "uppercase",
       color: active === l.label ? "var(--text-heading)" : "var(--text-body)",
-      border: active === l.label ? "1px solid var(--border-ink)" : "1px solid transparent",
-      padding: active === l.label ? "0 0 4px" : 0
+      borderBottom: active === l.label ? "1px solid var(--border-ink)" : "1px solid transparent",
+      paddingBottom: 4
     }
   }, l.label))), /*#__PURE__*/React.createElement("a", {
     href: "/",
