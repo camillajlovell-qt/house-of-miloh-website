@@ -1,19 +1,23 @@
 # House of Miloh — website
 
 A seven-page marketing site built on the House of Miloh design system. Every page is a
-self-contained `.dc.html` file that runs entirely in the browser using relative paths, so
+self-contained `.html` file that runs entirely in the browser using relative paths, so
 the whole thing is just static files — no build step, no dependencies to install.
 
 ## Pages
-- `Home.dc.html` — landing page (this is the entry point)
-- `About.dc.html` — studio story
-- `Portfolio.dc.html` — work grid
-- `Project.dc.html` — case-study detail (Casa Luna)
-- `Services.dc.html` — services + process
-- `Contact.dc.html` — working, validating enquiry form
-- `Journal.dc.html` — notes / blog index
+- `index.html` — landing page, served directly at `/`
+- `about.html` — studio story, served at `/about`
+- `portfolio.html` — work grid, served at `/portfolio`
+- `project.html` — case-study detail (Casa Luna), served at `/project`
+- `services.html` — services + process, served at `/services`
+- `contact.html` — working, validating enquiry form, served at `/contact`
+- `journal.html` — notes / blog index, served at `/journal`
 
-`index.html` redirects to `Home.dc.html`.
+The clean URLs (e.g. `/portfolio` instead of `/portfolio.html`) work automatically on
+GitHub Pages, which serves a matching `<name>.html` file for an extensionless request —
+no redirects or extra config needed. Locally, a plain static server (see below) won't do
+this extension resolution, so you'll need the full `.html` filename when testing on
+localhost.
 
 ## Run it on localhost
 
