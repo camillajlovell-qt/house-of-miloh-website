@@ -20,6 +20,11 @@ section{padding-left:20px !important;padding-right:20px !important}
 .art-title{font-size:34px !important}
 .art-wrap,.wrap{max-width:100% !important}
 form[style*="width:340px"],.newsletter-form{width:100% !important;max-width:340px}
+.ftr-top{flex-direction:column !important;align-items:center !important;gap:32px !important}
+.ftr-left{flex-direction:column !important;align-items:center !important;text-align:center !important;gap:20px !important}
+.ftr-col{align-items:center !important}
+.ftr-mark{position:static !important;left:auto !important;top:auto !important;transform:none !important;order:-1}
+.ftr-news{width:100% !important;align-items:center !important}
 }
 @media (max-width:480px){
 .pagetitle{font-size:32px !important}
