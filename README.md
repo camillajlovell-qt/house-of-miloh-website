@@ -1,8 +1,9 @@
 # House of Miloh — website
 
-A seven-page marketing site built on the House of Miloh design system. Every page is a
+An eight-page marketing site built on the House of Miloh design system. Every page is a
 self-contained `.html` file that runs entirely in the browser using relative paths, so
 the whole thing is just static files — no build step, no dependencies to install.
+`responsive.css` adds small-screen layout rules shared across all pages.
 
 ## Pages
 - `index.html` — landing page, served directly at `/`
@@ -12,6 +13,7 @@ the whole thing is just static files — no build step, no dependencies to insta
 - `services.html` — services + process, served at `/services`
 - `contact.html` — working, validating enquiry form, served at `/contact`
 - `journal.html` — notes / blog index, served at `/journal`
+- `article.html` — journal article detail template, served at `/article`
 
 The clean URLs (e.g. `/portfolio` instead of `/portfolio.html`) work automatically on
 GitHub Pages, which serves a matching `<name>.html` file for an extensionless request —
