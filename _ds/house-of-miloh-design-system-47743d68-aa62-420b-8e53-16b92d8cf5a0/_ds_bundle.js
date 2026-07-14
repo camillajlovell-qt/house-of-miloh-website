@@ -283,7 +283,7 @@ function ServiceTile({
     style: {
       position: "relative",
       aspectRatio: "1/1.1",
-      overflow: "hidden",
+      overflow: "visible",
       background: "var(--surface-media-placeholder)",
       display: "flex",
       alignItems: "flex-end",
@@ -500,7 +500,10 @@ function SiteHeader({
   ctaHref = "#",
   active
 }) {
-  return /*#__PURE__*/React.createElement("header", {
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const allLinks = [...leftLinks, ...rightLinks];
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("header", {
+    className: "sh-header",
     style: {
       position: "sticky",
       top: 0,
@@ -517,6 +520,7 @@ function SiteHeader({
       boxSizing: "border-box"
     }
   }, /*#__PURE__*/React.createElement("nav", {
+    className: "sh-left",
     style: {
       display: "flex",
       gap: 32,
@@ -537,6 +541,7 @@ function SiteHeader({
     }
   }, l.label))), /*#__PURE__*/React.createElement("a", {
     href: "/",
+    className: "sh-logo",
     style: {
       fontFamily: "var(--font-serif)",
       fontSize: 32,
@@ -547,6 +552,7 @@ function SiteHeader({
       flexShrink: 0
     }
   }, logoText.toUpperCase()), /*#__PURE__*/React.createElement("div", {
+    className: "sh-right",
     style: {
       display: "flex",
       gap: 24,
@@ -575,6 +581,65 @@ function SiteHeader({
       color: "var(--text-on-inverse)",
       padding: "8px 24px",
       whiteSpace: "nowrap"
+    }
+  }, ctaLabel)), /*#__PURE__*/React.createElement("button", {
+    className: "sh-burger",
+    "aria-label": "Menu",
+    onClick: () => setMobileOpen(o => !o),
+    style: {
+      display: "none",
+      flexDirection: "column",
+      gap: 5,
+      background: "none",
+      border: "none",
+      cursor: "pointer",
+      padding: 8,
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: { width: 22, height: 1, background: "var(--text-heading)", display: "block" }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: { width: 22, height: 1, background: "var(--text-heading)", display: "block" }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: { width: 22, height: 1, background: "var(--text-heading)", display: "block" }
+  }))), mobileOpen && /*#__PURE__*/React.createElement("div", {
+    className: "sh-mobile-panel",
+    style: {
+      position: "fixed",
+      top: "var(--nav-height)",
+      left: 0,
+      right: 0,
+      bottom: 0,
+      zIndex: 9,
+      background: "var(--surface-page)",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 28
+    }
+  }, allLinks.map(l => /*#__PURE__*/React.createElement("a", {
+    key: l.label,
+    href: l.href,
+    onClick: () => setMobileOpen(false),
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: 22,
+      color: "var(--text-heading)",
+      textTransform: "uppercase",
+      letterSpacing: "var(--tracking-widest)"
+    }
+  }, l.label)), /*#__PURE__*/React.createElement("a", {
+    href: ctaHref,
+    onClick: () => setMobileOpen(false),
+    style: {
+      fontFamily: "var(--font-sans)",
+      fontSize: 14,
+      letterSpacing: "var(--tracking-widest)",
+      textTransform: "uppercase",
+      background: "var(--miloh-maroon)",
+      color: "var(--text-on-inverse)",
+      padding: "12px 32px"
     }
   }, ctaLabel)));
 }

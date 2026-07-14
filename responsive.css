@@ -6,7 +6,7 @@ header>div{order:3 !important;flex:0 0 100% !important;justify-content:center !i
 body{overflow-x:hidden}
 section{padding-left:20px !important;padding-right:20px !important}
 .pagetitle{font-size:40px !important;line-height:1.05 !important;width:auto !important;max-width:100% !important}
-.hm-title{font-size:34px !important;line-height:1.15 !important;width:auto !important;max-width:100% !important;height:auto !important}
+.hm-title{font-size:28px !important;line-height:1.2 !important;width:auto !important;max-width:100% !important;height:auto !important}
 .jfeat-title{font-size:28px !important;line-height:1.2 !important}
 .pgrid,.sgrid,.jgrid,.rel-grid,.feat,.offer-sec,.art-hero-wrap,.hm-tiles,.hm-split,.founder-split,.proj-meta,.proj-imgs,.art-imgs,.mtc-head{grid-template-columns:1fr !important;display:flex !important;flex-direction:column !important;gap:24px !important}
 .pgrid{row-gap:32px !important}
@@ -29,4 +29,24 @@ form[style*="width:340px"],.newsletter-form{width:100% !important;max-width:340p
 @media (max-width:480px){
 .pagetitle{font-size:32px !important}
 .mtc-title{font-size:30px !important}
+}
+@media (max-width:420px){
+header{flex-wrap:nowrap !important;height:var(--nav-height) !important;row-gap:0 !important;padding:16px 20px !important;justify-content:space-between !important}
+header>a{order:0 !important;flex:0 0 auto !important;text-align:left !important;font-size:20px !important}
+.sh-left,.sh-right{display:none !important}
+.sh-burger{display:flex !important}
+.sh-mobile-panel{gap:16px !important}
+.sh-mobile-panel a{font-size:20px !important}
+.hero-logo{width:min(760px,94%) !important}
+.hero-section{height:auto !important;aspect-ratio:4/5 !important}
+section[style*="padding:80px 0 80px 40px"]{padding:32px 20px !important}
+.hm-title,.hm-section-title,.mtc-title{font-size:22px !important;line-height:1.2 !important;font-weight:300 !important;text-transform:uppercase !important;width:auto !important;max-width:100% !important;height:auto !important}
+.pagetitle,.art-title,.jfeat-title{font-size:18px !important;line-height:1.2rem !important;height:auto !important}
+p{font-size:14px !important;line-height:1.2rem !important}
+.ftr-top{flex-direction:column !important;align-items:flex-start !important;gap:32px !important}
+.ftr-mark{position:static !important;transform:none !important;order:1 !important;justify-content:flex-start !important}
+.ftr-left{order:2 !important;display:grid !important;grid-template-columns:1fr 1fr !important;gap:24px !important;width:100% !important}
+.ftr-left .ftr-col:nth-child(3){grid-column:1 / -1 !important}
+.ftr-news{order:3 !important;width:100% !important}
+.ftr-bottom{text-align:left !important}
 }
