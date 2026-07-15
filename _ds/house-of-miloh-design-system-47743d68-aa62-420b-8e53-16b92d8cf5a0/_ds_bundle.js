@@ -317,174 +317,148 @@ Object.assign(__ds_scope, { ServiceTile });
 
 // components/navigation/SiteFooter.jsx
 try { (() => {
-/** Footer with 3 link columns, a centered mark, and a newsletter signup, matching source exactly. */
-function FooterLink({
-  href,
-  children
-}) {
-  return /*#__PURE__*/React.createElement("a", {
-    href: href,
-    style: {
-      fontFamily: "var(--font-sans)",
-      fontSize: 14,
-      color: "var(--text-heading)",
-      textDecoration: "none"
-    },
-    onMouseEnter: e => e.currentTarget.style.color = "var(--miloh-brown)",
-    onMouseLeave: e => e.currentTarget.style.color = "var(--text-heading)"
-  }, children);
-}
+/** Bordered footer with 4-col grid (explore / connect / contact / social) matching source exactly. */
 function SiteFooter({
   exploreLinks = [],
   connectLinks = [],
-  contactLinks = [],
-  onNewsletterSubmit
+  email = "hello@houseofmiloh.com",
+  handle = "@houseofmiloh",
+  socialIcon
 }) {
   return /*#__PURE__*/React.createElement("footer", {
-    className: "site-footer",
     style: {
       borderTop: "1px solid var(--border-hairline)",
-      background: "var(--surface-page)",
-      padding: "64px 40px 32px"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "ftr-top",
-    style: {
-      position: "relative",
+      background: "var(--surface-footer)",
       display: "flex",
-      justifyContent: "space-between",
-      alignItems: "flex-start",
-      gap: 40,
-      maxWidth: "var(--content-max)",
-      margin: "0 auto"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "ftr-left",
-    style: {
-      display: "flex",
-      gap: 32
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "ftr-col",
-    style: {
-      display: "flex",
-      flexDirection: "column",
-      gap: 6
-    }
-  }, exploreLinks.map(l => /*#__PURE__*/React.createElement(FooterLink, {
-    key: l.label,
-    href: l.href
-  }, l.label))), /*#__PURE__*/React.createElement("div", {
-    className: "ftr-col",
-    style: {
-      display: "flex",
-      flexDirection: "column",
-      gap: 6
-    }
-  }, connectLinks.map(l => /*#__PURE__*/React.createElement(FooterLink, {
-    key: l.label,
-    href: l.href
-  }, l.label))), /*#__PURE__*/React.createElement("div", {
-    className: "ftr-col",
-    style: {
-      display: "flex",
-      flexDirection: "column",
-      gap: 6
-    }
-  }, contactLinks.map(l => /*#__PURE__*/React.createElement(FooterLink, {
-    key: l.label,
-    href: l.href
-  }, l.label)))), /*#__PURE__*/React.createElement("div", {
-    className: "ftr-mark",
-    style: {
-      position: "absolute",
-      left: "50%",
-      top: 0,
-      transform: "translateX(-50%)",
-      display: "flex",
-      alignItems: "center",
       justifyContent: "center"
     }
-  }, /*#__PURE__*/React.createElement("img", {
-    src: "assets/logo/miloh_icon.png",
-    alt: "House of Miloh",
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: "100%",
+      maxWidth: "var(--content-max)",
+      display: "grid",
+      gridTemplateColumns: "repeat(12, 1fr)",
+      gap: 24,
+      padding: "80px var(--gutter)",
+      boxSizing: "border-box"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      gridColumn: "span 3",
+      display: "flex",
+      flexDirection: "column",
+      gap: 24
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-eyebrow)",
+      fontStyle: "italic",
+      fontWeight: 600,
+      fontSize: 12,
+      letterSpacing: "var(--tracking-wider)",
+      color: "var(--text-heading-alt)"
+    }
+  }, "EXPLORE"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 12
+    }
+  }, exploreLinks.map(l => /*#__PURE__*/React.createElement("a", {
+    key: l.label,
+    href: l.href,
+    style: {
+      fontFamily: "var(--font-sans)",
+      fontSize: 14,
+      letterSpacing: "var(--tracking-widest)",
+      textTransform: "uppercase",
+      color: "var(--text-body)"
+    }
+  }, l.label)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      gridColumn: "span 3",
+      display: "flex",
+      flexDirection: "column",
+      gap: 24
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-eyebrow)",
+      fontStyle: "italic",
+      fontWeight: 600,
+      fontSize: 12,
+      letterSpacing: "var(--tracking-wider)",
+      color: "var(--text-heading-alt)"
+    }
+  }, "CONNECT"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 12
+    }
+  }, connectLinks.map(l => /*#__PURE__*/React.createElement("a", {
+    key: l.label,
+    href: l.href,
+    style: {
+      fontFamily: "var(--font-sans)",
+      fontSize: 14,
+      letterSpacing: "var(--tracking-widest)",
+      textTransform: "uppercase",
+      color: "var(--text-body)"
+    }
+  }, l.label)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      gridColumn: "span 4",
+      display: "flex",
+      flexDirection: "column",
+      gap: 16,
+      justifyContent: "flex-end"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: 18,
+      fontStyle: "italic",
+      color: "var(--text-heading)"
+    }
+  }, email), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: 18,
+      fontStyle: "italic",
+      color: "var(--text-heading)"
+    }
+  }, handle)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      gridColumn: "span 2",
+      display: "flex",
+      flexDirection: "column",
+      gap: 12,
+      alignItems: "flex-end"
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#",
     style: {
       width: 64,
       height: 64,
-      objectFit: "contain"
-    }
-  })), /*#__PURE__*/React.createElement("div", {
-    className: "ftr-news",
-    style: {
-      width: 320,
-      flexShrink: 0,
+      borderRadius: "var(--radius-pill)",
+      boxShadow: "inset 0 0 0 1px var(--border-ink)",
       display: "flex",
-      flexDirection: "column",
-      gap: 14
+      alignItems: "center",
+      justifyContent: "center",
+      color: "var(--miloh-maroon)"
     }
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "ftr-news-label",
+  }, socialIcon), /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: "var(--font-sans)",
-      fontSize: 14,
-      color: "var(--text-heading)"
-    }
-  }, "Subscribe to the newsletter"), /*#__PURE__*/React.createElement("form", {
-    className: "ftr-news-form",
-    onSubmit: onNewsletterSubmit,
-    style: {
-      display: "flex",
-      flexDirection: "column",
-      gap: 10
-    }
-  }, /*#__PURE__*/React.createElement("label", {
-    style: {
-      display: "flex",
-      flexDirection: "column",
-      gap: 6,
-      fontFamily: "var(--font-sans)",
-      fontSize: 13,
-      color: "var(--miloh-brown)"
-    }
-  }, "Your Email:", /*#__PURE__*/React.createElement("input", {
-    type: "email",
-    required: true,
-    style: {
-      border: "none",
-      borderBottom: "1px solid var(--border-ink)",
-      background: "transparent",
-      padding: "0 0 6px",
-      fontFamily: "var(--font-sans)",
-      fontSize: 14,
-      color: "var(--text-heading)",
-      outline: "none"
-    }
-  })), /*#__PURE__*/React.createElement("button", {
-    type: "submit",
-    style: {
-      border: "1px solid var(--border-ink)",
-      background: "transparent",
-      color: "var(--text-heading)",
-      textTransform: "uppercase",
-      letterSpacing: 1.2,
-      fontSize: 13,
-      padding: 14,
-      cursor: "pointer",
-      fontFamily: "var(--font-sans)",
-      lineHeight: 1
-    }
-  }, "Submit")))), /*#__PURE__*/React.createElement("div", {
-    className: "ftr-bottom",
-    style: {
-      maxWidth: "var(--content-max)",
-      margin: "40px auto 0",
-      fontFamily: "var(--font-sans)",
+      textAlign: "right",
+      fontFamily: "var(--font-eyebrow)",
+      fontStyle: "italic",
+      fontWeight: 600,
       fontSize: 12,
-      lineHeight: 1.25,
-      letterSpacing: 0.4,
-      color: "var(--miloh-brown)"
+      letterSpacing: "var(--tracking-wider)",
+      color: "var(--text-body)"
     }
-  }, "\xA9 2026 HOUSE OF MILOH.", /*#__PURE__*/React.createElement("br", null), "ALL RIGHTS RESERVED."));
+  }, "\xA9 2026 HOUSE OF MILOH.", /*#__PURE__*/React.createElement("br", null), "ALL RIGHTS RESERVED."))));
 }
 Object.assign(__ds_scope, { SiteFooter });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/SiteFooter.jsx", error: String((e && e.message) || e) }); }

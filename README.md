@@ -1,19 +1,32 @@
 # House of Miloh — website
 
-An eight-page marketing site built on the House of Miloh design system. Every page is a
+A marketing site built on the House of Miloh design system. Every page is a
 self-contained `.html` file that runs entirely in the browser using relative paths, so
 the whole thing is just static files — no build step, no dependencies to install.
-`responsive.css` adds small-screen layout rules shared across all pages.
+`responsive.css` adds small-screen layout rules shared across all pages, including a
+mobile hamburger menu below 420px.
 
 ## Pages
 - `index.html` — landing page, served directly at `/`
 - `about.html` — studio story, served at `/about`
 - `portfolio.html` — work grid, served at `/portfolio`
-- `project.html` — case-study detail (Casa Luna), served at `/project`
 - `services.html` — services + process, served at `/services`
 - `contact.html` — working, validating enquiry form, served at `/contact`
 - `journal.html` — notes / blog index, served at `/journal`
 - `article.html` — journal article detail template, served at `/article`
+
+### Case studies
+Each portfolio piece has its own dedicated page (served at `/project*`), chained
+together with "Next Project" links that loop back to the first:
+- `project.html` — Lucy Connelly Skin, served at `/project`
+- `project-hidden-cala.html` — served at `/project-hidden-cala`
+- `project-arc-skin.html` — served at `/project-arc-skin`
+- `project-european-athletics.html` — served at `/project-european-athletics`
+- `project-highmoodfood.html` — served at `/project-highmoodfood`
+- `project-weddings-events.html` — served at `/project-weddings-events`
+- `project-salt-house.html` — served at `/project-salt-house`
+- `project-azure-escapes.html` — served at `/project-azure-escapes`
+- `project-studio-sorelle.html` — served at `/project-studio-sorelle`
 
 The clean URLs (e.g. `/portfolio` instead of `/portfolio.html`) work automatically on
 GitHub Pages, which serves a matching `<name>.html` file for an extensionless request —
