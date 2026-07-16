@@ -55,4 +55,10 @@ p{font-size:14px !important;line-height:1.2rem !important}
 .pf-intro-extra{display:none !important}
 .pgrid{display:grid !important;flex-direction:unset !important;grid-template-columns:repeat(2,1fr) !important;gap:16px !important}
 .pgrid>*:nth-child(5n+3){grid-column:1 / -1 !important}
+.about-face-split{display:flex !important;flex-direction:column !important;grid-template-columns:none !important;padding:24px 20px !important;gap:24px !important}
+.about-face-head{order:1 !important;padding-right:0 !important;display:contents !important}
+.about-face-title{order:1 !important;font-size:22px !important;line-height:1.2 !important;width:auto !important;max-width:100% !important;height:auto !important}
+.about-face-box{order:2 !important;padding:24px !important}
+.about-face-box p{font-size:14px !important;line-height:1.2rem !important}
+.about-face-img{order:3 !important;min-height:320px !important}
 }
