@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/logo/miloh_icon.png">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -22,6 +23,25 @@ class Component extends DCLogic {
     };
   }
 }
+</script>
+<script>
+(function(){
+  function syncHeroImageHeight(){
+    var heroImg = document.querySelector('.feat-left .jimg');
+    var tiles = document.querySelectorAll('.feat-tile-img');
+    if(!heroImg || tiles.length < 4) return;
+    if(window.innerWidth <= 860){ heroImg.style.height = ''; return; }
+    var heroTop = heroImg.getBoundingClientRect().top;
+    var lastRowBottom = Math.max(tiles[2].getBoundingClientRect().bottom, tiles[3].getBoundingClientRect().bottom);
+    var h = lastRowBottom - heroTop;
+    if(h > 0){ heroImg.style.height = h + 'px'; }
+  }
+  window.addEventListener('load', syncHeroImageHeight);
+  window.addEventListener('resize', syncHeroImageHeight);
+  document.querySelectorAll('.feat-tile').forEach(function(t){ t.addEventListener('animationend', syncHeroImageHeight); });
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(syncHeroImageHeight); }
+  setTimeout(syncHeroImageHeight, 1200);
+})();
 </script>
 </body>
 </html>
