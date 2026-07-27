@@ -9,6 +9,8 @@ section{padding-left:20px !important;padding-right:20px !important}
 .hm-title{font-size:28px !important;line-height:1.2 !important;width:auto !important;max-width:100% !important;height:auto !important}
 .jfeat-title{font-size:28px !important;line-height:1.2 !important}
 .pgrid,.sgrid,.jgrid,.rel-grid,.feat,.offer-sec,.art-hero-wrap,.hm-tiles,.hm-split,.founder-split,.proj-meta,.proj-imgs,.art-imgs,.mtc-head{grid-template-columns:1fr !important;display:flex !important;flex-direction:column !important;gap:24px !important}
+.feat-grid{height:auto !important}
+.feat-tile-img{aspect-ratio:1/1 !important}
 .pgrid{row-gap:32px !important}
 .mtc-head{align-items:flex-start !important;text-align:left !important}
 .mtc-title{font-size:38px !important}
