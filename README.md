@@ -13,7 +13,8 @@ mobile hamburger menu below 420px.
 - `services.html` — services + process, served at `/services`
 - `contact.html` — working, validating enquiry form, served at `/contact`
 - `journal.html` — notes / blog index, served at `/journal`
-- `article.html` — journal article detail template, served at `/article`
+- `denia-guide.html` — journal article: "An Insider's Guide To Denia Like A Local", served at `/denia-guide`
+- `valencia-guide.html` — journal article: "A Guide to Valencia", served at `/valencia-guide`
 
 ### Case studies
 Each portfolio piece has its own dedicated page (served at `/project*`), chained
